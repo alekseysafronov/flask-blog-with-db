@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Добавить новый пост {% endblock %}</h1>
+    <form method="post">
+        <label for="title">Заголовок</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Назовите пост"
+               value="{{ request.form['title'] }}"></input>
+        <br>
+
+        <label for="content">Контент поста</label>
+        <br>
+        <textarea name="content"
+                  placeholder="Пишите сюда свои мысли"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['content'] }}</textarea>
+        <br>
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}
